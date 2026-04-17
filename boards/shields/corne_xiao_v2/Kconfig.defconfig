@@ -1,16 +1,32 @@
 if SHIELD_CORNE_XIAO_V2_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "Corne"
+    default "Kriz's KBD"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
+
+config BT_MAX_CONN
+    default 6
+
+config BT_MAX_PAIRED
+    default 6
 
 endif
 
 if SHIELD_CORNE_XIAO_V2_LEFT || SHIELD_CORNE_XIAO_V2_RIGHT
 
 config ZMK_SPLIT
+    default y
+
+config ZMK_POINTING
+    default y
+
+endif
+
+if BOARD_SEEEDUINO_XIAO_BLE && SHIELD_CORNE_XIAO_V2_RIGHT
+
+config I2C
     default y
 
 endif

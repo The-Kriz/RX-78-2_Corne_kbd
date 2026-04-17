@@ -19,6 +19,8 @@
         ;
 };
 
-&right_encoder {
+// Enable input split so this half sends trackpad events to central
+&input_split_right0 {
     status = "okay";
+    device = <&cirque_trackpad>;
 };
