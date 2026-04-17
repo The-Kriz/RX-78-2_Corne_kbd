@@ -1,6 +1,4 @@
 #include "corne_xiao_v2.dtsi"
-#include <dt-bindings/zmk/input_transform.h>
-
 
 &default_transform {
     col-offset = <6>;
@@ -84,5 +82,4 @@
 // Enable input split so this half sends trackpad events to central
 &glidepoint_split {
     device = <&glidepoint>;
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 };
