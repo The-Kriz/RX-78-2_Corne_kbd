@@ -16,5 +16,6 @@
 };
 
 // Enable input-split listener on central to receive trackpad events from right half
-&input_split_right0 { status = "okay"; };
-&input_listener_right0 { status = "okay"; };
+&glidepoint_listener {
+    status = "okay";
+};
