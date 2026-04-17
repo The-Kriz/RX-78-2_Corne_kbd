@@ -1,23 +1,13 @@
 /**
  * Board-specific overlay for seeeduino_xiao_ble
  * Applies only when building corne_xiao_v2_right with this board.
- *
- * Configures i2c0 (D4=SDA, D5=SCL) for the Cirque Pinnacle trackpad.
- * DR (data-ready) interrupt is on P0.10 (gpio0 10).
- *
- * NOTE: P0.10 is an NFC pad — make sure CONFIG_NFCT_PINS_AS_GPIOS=y
- * is set in your config (it already is in config/corne_xiao_v2.conf).
- *
- * IMPORTANT: The original right overlay used <&gpio0 10 GPIO_ACTIVE_HIGH>
- * as column 6 of the key matrix. That pin has been moved to <&gpio0 16>
- * to free P0.10 for the trackpad DR line. Verify this matches your
- * physical wiring; adjust the col-gpios list if needed.
  */
 
 // ======== i2c0 pin control ========
 // D4   = P0.04 = SDA
 // D5   = P0.05 = SCL
 // NFC1 = P0.09 = DR
+
 &pinctrl {
     i2c0_default: i2c0_default {
         group1 {
