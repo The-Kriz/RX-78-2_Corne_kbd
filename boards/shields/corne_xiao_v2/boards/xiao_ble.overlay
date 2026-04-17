@@ -32,7 +32,7 @@
     pinctrl-names = "default", "sleep";
     clock-frequency = <I2C_BITRATE_FAST>;
 
-    cirque_trackpad: cirque_trackpad@2a {
+    glidepoint: glidepoint@0 {
         status = "okay";
         compatible = "cirque,pinnacle";
         reg = <0x2a>;
