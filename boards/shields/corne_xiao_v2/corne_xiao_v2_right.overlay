@@ -20,7 +20,7 @@
 };
 
 // Enable input split so this half sends trackpad events to central
-&input_split_right0 {
-    status = "okay";
-    device = <&glidepoint@0>;
+&glidepoint_split {
+    device = <&glidepoint>;
+//  input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 };
