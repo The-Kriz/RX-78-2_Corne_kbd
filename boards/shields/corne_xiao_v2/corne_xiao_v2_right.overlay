@@ -69,13 +69,13 @@
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
-    clock-frequency = <I2C_BITRATE_FAST>;
+    clock-frequency = <I2C_BITRATE_STANDARD>;
 
     glidepoint: glidepoint@2a {
         status = "okay";
         compatible = "cirque,pinnacle";
         reg = <0x2A>;
-        data-ready-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        data-ready-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH)>;
         sensitivity = "2x";
     };
 };
