@@ -2,14 +2,14 @@ file_format: "2"
 id: corne
 name: Corne
 type: shield
-url: https://github.com/friction07/corne-xiao 
+url: https://github.com/The-Kriz/zmk-config-corne-xiao
 requires: [xiao_ble//zmk]
 exposes: [i2c_oled]
 features:
   - keys
-  - display
   - encoder
   - studio
+  - pointing
 siblings:
   - corne_xiao_v2_left
   - corne_xiao_v2_right
