@@ -1,4 +1,6 @@
 #include "corne_xiao_v2.dtsi"
+#include <dt-bindings/zmk/input_transform.h>
+
 
 &default_transform {
     col-offset = <6>;
