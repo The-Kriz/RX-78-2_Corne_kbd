@@ -19,6 +19,45 @@
         ;
 };
 
+// ======== i2c0 pin control ========
+// D4   = P0.04 = SDA
+// D5   = P0.05 = SCL
+// NFC1 = P0.09 = DR
+
+&pinctrl {
+    i2c0_default: i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 4)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 5)>;
+        };
+    };
+    i2c0_sleep: i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 4)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 5)>;
+            low-power-enable;
+        };
+    };
+};
+
+&i2c0 {
+    compatible = "nordic,nrf-twim";
+    status = "okay";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+    clock-frequency = <I2C_BITRATE_FAST>;
+
+    glidepoint: glidepoint@0 {
+        status = "okay";
+        compatible = "cirque,pinnacle";
+        reg = <0>;
+        data-ready-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        sleep-mode-enable;
+        sensitivity = "2x";
+    };
+};
+
 // Enable input split so this half sends trackpad events to central
 &glidepoint_split {
     device = <&glidepoint>;
