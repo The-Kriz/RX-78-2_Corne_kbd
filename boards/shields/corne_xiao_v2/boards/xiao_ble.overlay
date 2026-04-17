@@ -35,7 +35,7 @@
     glidepoint: glidepoint@0 {
         status = "okay";
         compatible = "cirque,pinnacle";
-        reg = <0x2a>;
+        reg = <0>;
         data-ready-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
         sleep-mode-enable;
         sensitivity = "2x";
