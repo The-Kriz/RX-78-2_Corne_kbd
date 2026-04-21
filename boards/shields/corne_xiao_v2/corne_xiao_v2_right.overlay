@@ -75,7 +75,7 @@
         compatible = "cirque,pinnacle";
         reg = <0x2A>;
         data-ready-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH)>;
-        sensitivity = "4x";
+        sensitivity = "3x";
         invert-x;
         primary-tap-enable;
     };
