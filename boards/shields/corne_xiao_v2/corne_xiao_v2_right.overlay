@@ -76,7 +76,6 @@
         reg = <0x2A>;
         data-ready-gpios = <&gpio0 9 (GPIO_ACTIVE_HIGH)>;
         invert-x;
-        invert-y;
         sensitivity = "2x";
         primary-tap-enable;
     };
